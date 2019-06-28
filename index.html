@@ -47,7 +47,7 @@
     var sex = document.getElementById("sex").value;
     var blood = document.getElementById("blood").value;
     var textform = document.getElementById("textform").value;
-    var form = name, mail, sex, blood, textform;
+    var form = document.write("<p>" + name + "</p>" + "<p>" + mail + "</p>" + "<p>" + sex + "</p>" + "<p>" + blood + "</p>" + "<p>" + textform + "</p>");
     function sendmail(subject, body) {
       return fetch('https://iy93xy8xg3.execute-api.us-east-1.amazonaws.com/production/submit', {
         method: 'POST',
