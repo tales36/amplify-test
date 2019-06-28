@@ -47,7 +47,13 @@
     var sex = document.getElementById("sex").value;
     var blood = document.getElementById("blood").value;
     var textform = document.getElementById("textform").value;
-    var form = document.write("<p>" + name + "</p>" + "<p>" + mail + "</p>" + "<p>" + sex + "</p>" + "<p>" + blood + "</p>" + "<p>" + textform + "</p>");
+    var item = {
+        'name':name,
+        'mail':mail,
+        'sex':sex,
+        'blood':blood,
+        'textform':textform
+    };
     function sendmail(subject, body) {
       return fetch('https://iy93xy8xg3.execute-api.us-east-1.amazonaws.com/production/submit', {
         method: 'POST',
@@ -58,7 +64,7 @@
         body: JSON.stringify({ subject, body })
       })
     }
-    sendmail(name,form);
+    sendmail(name,item);
 
     });
 　　</script>
