@@ -43,17 +43,7 @@
 
     // 入力フォームの値を取得
     var name = document.getElementById("name").value;
-    var mail = document.getElementById("mail").value;
-    var sex = document.getElementById("sex").value;
-    var blood = document.getElementById("blood").value;
-    var textform = document.getElementById("textform").value;
-    var item = {
-        'name':name,
-        'mail':mail,
-        'sex':sex,
-        'blood':blood,
-        'textform':textform
-    };
+    var item = "<p>" + document.getElementById("mail").value + "</p>" + "<p>" + document.getElementById("sex").value + "</p>" + "<p>" + document.getElementById("blood").value + "</p>" + "<p>" + document.getElementById("textform").value + "</p>";
     function sendmail(subject, body) {
       return fetch('https://iy93xy8xg3.execute-api.us-east-1.amazonaws.com/production/submit', {
         method: 'POST',
