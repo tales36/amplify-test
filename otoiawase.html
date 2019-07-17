@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>HTMLの練習</title>
+  <meta http-equiv="content-type" charset="utf-8">
+</head>
+<body>
+<form>
+<p>
+名前：<input type="text" name="name" size="40" id="name">
+</p>
+<p>
+メールアドレス：<input type="text" name="mail" size="40" id="mail">
+</p>
+<p>
+性別：<input type="radio" name="sex" value="male" id="sex">男
+<input type="radio" name="sex" value="female" id="sex">女
+</p>
+<p>
+血液型：<select name="blood">
+<option value="A" id="blood">A型</option>
+<option value="B" id="blood">B型</option>
+<option value="O" id="blood">O型</option>
+<option value="AB" id="blood">AB型</option>
+</select>
+</p>
+<p>
+ご感想：<br>
+<textarea name="kanso" rows="4" cols="40" id="textform"></textarea>
+</p>
+<p>
+<button id="button">送信</button> <input type="reset" value="リセット">
+</p>
+</form> 
+</body>
+  <script>                                                              
+    // ボタンの要素を取得
+    var button = document.getElementById("button");     
+    // ボタンをクリックした時の処理
+    button.addEventListener("click", function(e) {
+
+    e.preventDefault();
+
+    // 入力フォームの値を取得
+    var name = document.getElementById("name").value;
+    var mail = document.getElementById("mail").value;
+    var sex = document.getElementById("sex").value;
+    var blood = document.getElementById("blood").value;
+    var textform = document.getElementById("textform").value;
+    var form = name + mail + sex + blood + textform;
+    function sendmail(subject, body) {
+      return fetch('https://iy93xy8xg3.execute-api.us-east-1.amazonaws.com/production/submit', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ subject, body })
+      })
+    }
+    sendmail(name,form);
+
+    });
+　　</script>
+</html>
