@@ -48,7 +48,7 @@
     var sex = document.getElementById("sex").value;
     var blood = document.getElementById("blood").value;
     var textform = document.getElementById("textform").value;
-    var form = name /t mail /t sex /t blood /t textform;
+    var form = name + mail + sex + blood + textform;
     function sendmail(subject, body) {
       return fetch('https://iy93xy8xg3.execute-api.us-east-1.amazonaws.com/production/submit', {
         method: 'POST',
@@ -59,7 +59,7 @@
         body: JSON.stringify({ subject, body })
       })
     }
-    sendmail(name,form);
+    sendmail("お問い合わせがありました",form);
 
     });
 　　</script>
