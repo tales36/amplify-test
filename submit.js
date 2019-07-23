@@ -1,7 +1,7 @@
 // ボタンの要素を取得
     var button = document.getElementById("button");     
 // ボタンをクリックした時の処理
-if (paper != null) {
+if (button != null) {
     button.addEventListener("click", function(e) {
     e.preventDefault();
           })
