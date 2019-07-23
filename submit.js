@@ -1,11 +1,9 @@
 // ボタンの要素を取得
     var button = document.getElementById("button");     
 // ボタンをクリックした時の処理
-if (button != null) {
     button.addEventListener("click", function(e) {
     e.preventDefault();
-          })
-};
+          });
 // 入力フォームの値を取得
     var name = document.getElementById("name").value;
     var mail = document.getElementById("mail").value;
