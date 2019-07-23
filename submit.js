@@ -7,12 +7,14 @@ if (button != null) {
           })
 };
 // 入力フォームの値を取得
+if (value != null) {
     var name = document.getElementById("name").value;
     var mail = document.getElementById("mail").value;
     var sex = document.getElementById("sex").value;
     var blood = document.getElementById("blood").value;
     var textform = document.getElementById("textform").value;
     var form = name + mail + sex + blood + textform;
+};
     function sendmail(subject, body) {
       return fetch('https://iy93xy8xg3.execute-api.us-east-1.amazonaws.com/production/submit', {
         method: 'POST',
