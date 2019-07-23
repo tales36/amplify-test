@@ -1,9 +1,12 @@
-// ƒ{ƒ^ƒ“‚Ì—v‘f‚ğæ“¾
+// ãƒœã‚¿ãƒ³ã®è¦ç´ ã‚’å–å¾—
     var button = document.getElementById("button");     
-// ƒ{ƒ^ƒ“‚ğƒNƒŠƒbƒN‚µ‚½‚Ìˆ—
+// ãƒœã‚¿ãƒ³ã‚’ã‚¯ãƒªãƒƒã‚¯ã—ãŸæ™‚ã®å‡¦ç†
+if (paper != null) {
     button.addEventListener("click", function(e) {
     e.preventDefault();
-// “ü—ÍƒtƒH[ƒ€‚Ì’l‚ğæ“¾
+          })
+};
+// å…¥åŠ›ãƒ•ã‚©ãƒ¼ãƒ ã®å€¤ã‚’å–å¾—
     var name = document.getElementById("name").value;
     var mail = document.getElementById("mail").value;
     var sex = document.getElementById("sex").value;
@@ -20,5 +23,5 @@
         body: JSON.stringify({ subject, body })
       })
     }
-    sendmail("‚¨–â‚¢‡‚í‚¹‚ª‚ ‚è‚Ü‚µ‚½",form);
+    sendmail("ãŠå•ã„åˆã‚ã›ãŒã‚ã‚Šã¾ã—ãŸ",form);
     });
