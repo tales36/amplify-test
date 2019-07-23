@@ -24,4 +24,4 @@ if (paper != null) {
       })
     }
     sendmail("お問い合わせがありました",form);
-    });
+    );
